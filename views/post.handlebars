@@ -1,0 +1,46 @@
+
+<div class='container pt-3 mb-3'>
+    <div class='card mb-3'>
+    <div class="card-header bg-light">{{posts.title}}</div>
+      <div class="card-body">
+        <p class="card-text">{{posts.content}}</p>
+      </div>
+      <div class="card-footer bg-light text-right"><small class="text-muted"> by {{posts.user.username}} posted on {{format_date posts.date_created}}</small></div>
+  </div>
+</div>  
+
+
+{{!-- <div class='container mb-3'>
+  <!-- card replace with handlebar -->
+  {{#each posts.comments as |comment|}}
+    <div class='card mb-3'>
+      <div class="card-body">
+        <p class="card-text">{{comment.comment}}</p>
+      </div>
+      <div class="card-footer bg-light text-right"><small class="text-muted"> by {{comment.user.username}} posted on {{format_date comment.date_created}}</small></div>
+    </div>
+  {{/each}}
+</div> --}}
+
+{{!-- <div class='container p-3 mb-3'> --}}
+  {{!-- <ul class="list-group list-group-flush">
+    {{#each posts.comments as |comment|}}
+    <li class="list-group-item">{{comment.comment}}<small class="text-muted text-rigth"> by {{comment.user.username}} posted on {{format_date comment.date_created}}</small></li>
+    {{/each}}
+  </ul>
+</div> --}}
+
+<div class='container mb-3'>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p>Comments:</p>
+      <ul class="list-group list-group-flush">
+          {{#each posts.comments as |comment|}}
+          <li class="list-group-item">{{comment.comment}}<div><small class="text-muted" >&nbsp&nbsp&nbsp&nbsp{{comment.user.username}} posted on {{format_date comment.date_created}}</small></div></li>
+          {{/each}}
+        </ul>
+    </div>
+  </div>
+</div>
+
+<script src="/js/post.js"></script>

@@ -1,0 +1,21 @@
+#home-page-cards {
+  width: 31%;
+}
+@media only screen and (max-width: 1200px) {
+  /* For mobile phones: */
+  #home-page-cards {
+    width: 48%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* For mobile phones: */
+  #home-page-cards {
+    width: 47%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  #home-page-cards {
+    width: 100%;
+  }
+}

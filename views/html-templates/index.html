@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../public/css/index.css" />
+    <title>Ratatouille</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="../../public/images/ratatouille-logo.png"
+          width="200px"
+          alt="Logo"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
+        <!-- should be rendered conditionally based on logged in or not -->
+        <ul class="navbar-nav">
+          <!-- show profile when user is signed in -->
+          <li class="nav-item justify-content-center">
+            <a class="nav-link" href="#">My Profile</a>
+          </li>
+          <!-- show logout when user is signed in -->
+          <li class="nav-item justify-content-center">
+            <a class="nav-link">Logout</a>
+          </li>
+          <!-- show register if not logged in -->
+          <li class="nav-item justify-content-center">
+            <a class="nav-link">Register</a>
+          </li>
+          <!-- show signin if not logged in -->
+          <li class="nav-item justify-content-center">
+            <a class="nav-link">Signin</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- banner message -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Creativity meets community!</h1>
+        <p class="lead">
+          Discover hundreds of cooking recipes from the community and also share
+          your recipes.
+        </p>
+      </div>
+    </div>
+
+    <!-- container for all the recipes -->
+    <div class="container justify-content-between d-flex flex-wrap mt-5">
+      <!-- card replace with handlebar -->
+      <div class="card m-2">
+        <img
+          class="card-img-top"
+          src="https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI="
+          alt="Card image cap"
+        />
+        <div class="card-body align-item-center">
+          <h5 class="card-title">Recipe Name Here</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">View Recipe</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <img
+          class="card-img-top"
+          src="https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI="
+          alt="Card image cap"
+        />
+        <div class="card-body align-item-center">
+          <h5 class="card-title">Recipe Name Here</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">View Recipe</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <img
+          class="card-img-top"
+          src="https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI="
+          alt="Card image cap"
+        />
+        <div class="card-body align-item-center">
+          <h5 class="card-title">Recipe Name Here</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">View Recipe</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <img
+          class="card-img-top"
+          src="https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI="
+          alt="Card image cap"
+        />
+        <div class="card-body align-item-center">
+          <h5 class="card-title">Recipe Name Here</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">View Recipe</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+/* banner food pic */
+.container {
+  justify-content: center;
+  align-items: center;
+}
+.container img {
+  width: 50%;
+  height: fit-content;
+  margin-right: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0.1px grey;
+}
+
+/* recipe details */
+.card {
+  width: 100%;
+  max-width: 800px;
+}
+.card-body {
+  padding: 1.2rem;
+}
+#favorite-recipe {
+  border-radius: 50%;
+}
+
+/* comment section */
+.comment-container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.comment-card {
+  width: 100%;
+  box-shadow: 0px 0px 3px 0.1px rgb(173, 173, 173) inset;
+  padding: 0.8rem;
+}
+.comment-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+.comment-box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 3px 0.1px rgb(37, 37, 37) inset;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+textarea {
+  width: 100%;
+  height: 10rem;
+  resize: none;
+}
+
+/* media queries */
+@media only screen and (max-width: 767px) {
+  /* For mobile phones: */
+  .container {
+    flex-direction: column;
+  }
+  .container img {
+    width: 80%;
+    margin-right: 0;
+  }
+  .container h1 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+}

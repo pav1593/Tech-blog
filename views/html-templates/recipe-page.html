@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../public/css/recipe-page.css" />
+    <title>Ratatouille</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="../../public/images/ratatouille-logo.png"
+          width="200px"
+          alt="Logo"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
+        <!-- should be rendered conditionally based on logged in or not -->
+        <ul class="navbar-nav">
+          <li class="nav-item justify-content-center">
+            <a class="nav-link disabled" href="#">Welcome 'Name'</a>
+          </li>
+          <li class="nav-item justify-content-center">
+            <a class="nav-link" href="#">My Profile</a>
+          </li>
+          <li class="nav-item justify-content-center">
+            <a class="nav-link">Logout btn</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h2 class="text-center my-5">Add a New Recipe</h2>
+    <form class="recipe-form">
+      <!-- name of recipe -->
+      <div class="form-group">
+        <label for="name">What is the name of your recipe?</label>
+        <input type="text" class="form-control" id="name" />
+      </div>
+      <!-- description of recipe --- textarea is used in case user has a long description
+     so it might be appropriate to use datatype.TEXT in db rather than STRING -->
+      <div class="form-group">
+        <label for="description">Give a description of your reciepe</label
+        ><textarea name="description" id="description"></textarea>
+      </div>
+      <!-- ingredient list -->
+      <div class="form-group">
+        <label for="ingredients"
+          >List the ingredients required in your recipes</label
+        ><textarea name="ingredients" id="ingredients"></textarea>
+      </div>
+      <!-- steps -->
+      <div class="form-group">
+        <label for="steps">List the steps required to cook this recipe</label
+        ><textarea name="steps" id="steps"></textarea>
+      </div>
+      <!-- upload file -->
+      <label for="steps">Upload an image for your recipe</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="inputGroupFileAddon03"
+          >
+            Button
+          </button>
+        </div>
+        <div class="custom-file">
+          <input
+            type="file"
+            class="custom-file-input"
+            id="inputGroupFile03"
+            aria-describedby="inputGroupFileAddon03"
+          />
+          <label class="custom-file-label" for="inputGroupFile03"
+            >Choose file</label
+          >
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary mb-5 d-block mx-auto">
+        Share your recipe!
+      </button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+textarea {
+  width: 100%;
+  height: 10rem;
+  resize: none;
+}
+
+.recipe-form {
+  width: 50%;
+  margin: auto;
+}

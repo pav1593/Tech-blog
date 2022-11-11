@@ -1,0 +1,29 @@
+.login-form {
+  max-width: 300px;
+}
+
+.login-form button {
+  display: block;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.login-register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  top: 50%;
+  bottom: 50%;
+}
+
+.logo-login {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-login img {
+  width: 350px;
+}

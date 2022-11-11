@@ -1,0 +1,93 @@
+.card {
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 0.1px grey;
+  width: 100%;
+  overflow: hidden;
+  height: 200px;
+  flex-direction: row;
+}
+.card .image {
+  margin: auto;
+}
+.card .image img {
+  height: fit-content;
+  width: 280px;
+}
+.card-body {
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body a {
+  text-align: center;
+  align-items: center;
+  width: 300px;
+}
+
+.recipe-container {
+  box-shadow: 0px 0px 10px 1px grey;
+  border-radius: 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+.card-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-end button {
+  border-radius: 50%;
+  margin: 1rem;
+  height: 50px;
+  width: 50px;
+}
+
+@media only screen and (max-width: 550px) {
+  /* For mobile phones: */
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1px) {
+  /* For mobile phones: */
+  .nav-link {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0.1px grey;
+    width: 100%;
+    overflow: hidden;
+    height: fit-content;
+    flex-direction: column;
+  }
+  .card-end {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .card .image {
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .card .image img {
+    height: fit-content;
+    width: 80%;
+    border-radius: 15px;
+  }
+  .card-body a {
+    margin: auto;
+    margin-top: 2rem;
+    width: 300px;
+  }
+}
