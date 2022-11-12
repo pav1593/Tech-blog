@@ -3,6 +3,9 @@ const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+const multer  = require('multer');
+const upload = multer();
+
 
 //-----------routes for user recipe CRUD---------------------
 router.get('/', async (req, res) => {
@@ -123,6 +126,31 @@ router.post('/:id', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// user to add a comment using post id and user_id
+router.post('/:post_id/comments/:user_id',upload.none(), async (req, res) => {
+  try {
+    const commentData = await Comment.create(
+      {
+        comment: req.body.comment,
+        user_id: req.params.user_id,
+        post_id: req.params.post_id,
+      }
+    );
+
+    if (!commentData) {
+      res.status(404).json({ message: 'No post found with that id!' });
+      return;
+    }
+
+    
+    res.status(200).redirect(`/api/posts/${req.params.post_id}`);
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 
 //used to render dashboard view
 router.delete('/:id', async (req, res) => {
