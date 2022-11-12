@@ -14,9 +14,13 @@
     <div class="card-body">
       <p>Comments:</p>
       <ul class="list-group list-group-flush">
+        {{#if posts.comments.length}}
           {{#each posts.comments as |comment|}}
           <li class="list-group-item">{{comment.comment}}<div><small class="text-muted" >&nbsp&nbsp&nbsp&nbsp{{comment.user.username}} posted on {{format_date comment.date_created}}</small></div></li>
           {{/each}}
+        {{else}}
+          <small class="text-muted">No comments available.</small>
+        {{/if}}
         </ul>
     </div>
   
@@ -29,7 +33,7 @@
     >
       <div class='form-group'>
         <textarea
-          class='form-input form-control'
+          class='form-input form-control text-muted'
           id='post-comment'
           name='comment'
         >Enter a new comment</textarea>
@@ -44,6 +48,11 @@
     </form>
   {{/if}}
   </div>
+  <button
+          type='button'
+          onclick="javascript:history.back()"
+          class='btn btn-primary d-block mt-1 mx-auto'
+        >Back</button>
 </div>
 
 <script src="/js/post.js"></script>
