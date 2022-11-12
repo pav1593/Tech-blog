@@ -124,22 +124,24 @@ router.post('/:id', withAuth, async (req, res) => {
   }
 });
 
+//used to render dashboard view
 router.delete('/:id', async (req, res) => {
   // delete a recipe by its `id` value
   try {
-    const recipeData = await Recipe.destroy({
+    const postData = await Post.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!recipeData) {
+    if (!postData) {
       res.status(404).json({ message: 'No recipe found with that id!' });
       return;
     }
 
-    res.status(200).json(recipeData);
+   // res.status(200).json(recipeData);
+   res.status(200).redirect(`/dashboard`);
   } catch (err) {
     res.status(500).json(err);
   }

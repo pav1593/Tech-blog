@@ -3,21 +3,29 @@
 <div class="card m-3">
    <div class="card-body">
       <p>{{username}} posts:</p>
-      <ul class="list-group">
+      <ul class="list-group" id="posts-list">
         {{#if posts.length}}
           {{#each posts as |post|}}
              <li class="list-group-item clearfix">
-                 <h4 class="float-left"><a href='api/posts/{{post.id}}'>{{post.title}}</a></h4>
-                  <button
-                    id='del-link'
-                    class='btn btn-link float-right'
-                    data-id='{{post.id}}'
-                  >Delete</button>
-                    <button
-                    id='edit-link'
-                    class='btn btn-link float-right'
-                    data-id='{{post.id}}'
-                  >Edit</button>
+                <h4 class="float-left"><a href='api/posts/{{post.id}}'>{{post.title}}</a></h4>
+                  <button id='del-link' class='btn btn-link float-right' data-id='{{post.id}}' >Delete</button>
+                  <button id='edit-link' class='btn btn-link float-right' type="button" data-toggle="collapse" data-target="#collapseUpdate{{post.id}}" aria-expanded="false" aria-controls="collapseUpdate{{post.id}}">Edit</button>
+
+                  <div class="collapse m-3 p-3" id="collapseUpdate{{post.id}}">
+                      <form class='d-block form' action='/api/recipes/' method='POST' enctype='multipart/form-data'>
+                        <div class='form-group'>
+                          <label for='title'>Title:</label>
+                          <input class='form-input form-control' type='text' id='recipe-name' name='name' value={{post.title}}>
+                        </div>
+                        <div class='form-group'>
+                          <label for='content'>Content:</label>
+                          <textarea class='form-input form-control' id='recipe-desc' name='description'>{{post.content}}</textarea>
+                        </div>
+                        <div class='form-group'>
+                          <button type='submit' class='btn btn-success d-block mx-auto'>Add Post</button>
+                        </div>
+                      </form>
+                    </div>
             </li>
           {{/each}}
         {{else}}
@@ -28,46 +36,24 @@
     
   <div class='d-flex flex-column align-items-center'>
 
-    <form
-      class='form new-project-form mt-1'
-      action='/api/recipes/'
-      method='POST'
-      enctype='multipart/form-data'
-      style='width:80%;max-width:600px;'
-    >
+    <form class='form new-project-form mt-1' action='/api/recipes/' method='POST' enctype='multipart/form-data' style='width:80%;max-width:600px;' >
       <div class='form-group'>
         <label for='title'>Title:</label>
-        <input
-          class='form-input form-control form-control'
-          type='text'
-          id='recipe-name'
-          name='name'
-        />
+        <input class='form-input form-control form-control' type='text' id='recipe-name' name='name'/>
       </div>
       <div class='form-group'>
         <label for='content'>Content:</label>
-        <textarea
-          class='form-input form-control'
-          id='recipe-desc'
-          name='description'
-        ></textarea>
+        <textarea class='form-input form-control' id='recipe-desc' name='description'></textarea>
       </div>
       <div class='form-group'>
-        <button
-          type='submit'
-          class='btn btn-success d-block mx-auto'
-        >Add Post</button>
+        <button type='submit' class='btn btn-success d-block mx-auto'>Add Post</button>
       </div>
     </form>
 
   </div>
 
 </div>
-<button
-          type='button'
-          onclick="javascript:history.back()"
-          class='btn btn-primary d-block mt-1 mx-auto'
-        >Back</button>
+<button type='button' onclick="javascript:history.back()" class='btn btn-primary d-block mt-1 mx-auto'>Back</button>
 </div>
 
-<script src='./js/profile.js'></script>
+<script src='./js/dashboard.js'></script>
