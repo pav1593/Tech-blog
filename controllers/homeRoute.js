@@ -25,29 +25,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//------------------get one specific recipe--------------------
-router.get('/recipes/:id', async (req, res) => {
-  try {
-    const recipeData = await Recipe.findByPk(req.params.id, {
-      include: [
-        { model: User, attributes: { exclude: ['password'] } },
-        { model: Comment },
-        { model: Image },
-      ],
-    });
 
-    const recipes = recipeData.get({ plain: true });
-
-    res.render('recipe', {
-      ...recipes,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//------------------user profile routes-------------------
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -63,18 +41,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-//------------------recipe update routes-------------------
-router.get('/update/:id', async (req, res) => {
-  try {
-    const recipeData = await Recipe.findByPk(req.params.id);
-
-    const recipe = recipeData.get({ plain: true });
-
-    res.render('update', { ...recipe, logged_in: true });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 //----------------login routes--------------------
 router.get('/login', (req, res) => {

@@ -12,14 +12,14 @@
                   <button id='edit-link' class='btn btn-link float-right' type="button" data-toggle="collapse" data-target="#collapseUpdate{{post.id}}" aria-expanded="false" aria-controls="collapseUpdate{{post.id}}">Edit</button>
 
                    <div class="container">
-                      <form class='collapse mt-3 pt-3 form' id="collapseUpdate{{post.id}}" action='/api/recipes/' method='POST' enctype='multipart/form-data'>
+                      <form class='collapse mt-3 pt-3 form' id="collapseUpdate{{post.id}}" action='/api/posts/updates/{{post.id}}' method='POST' enctype='multipart/form-data'>
                         <div class='form-group'>
                           <label for='title'>Title:</label>
-                          <input class='form-input form-control' type='text' id='recipe-name' name='name' value={{post.title}}>
+                          <input class='form-input form-control' type='text' id='title' name='title' value={{post.title}}>
                         </div>
                         <div class='form-group'>
                           <label for='content'>Content:</label>
-                          <textarea class='form-input form-control' id='recipe-desc' name='description'>{{post.content}}</textarea>
+                          <textarea class='form-input form-control' id='content' name='content'>{{post.content}}</textarea>
                         </div>
                         <div class='form-group d-block'>
                           <button type='submit' class='btn btn-success d-inline mx-auto'>Update</button>
@@ -37,14 +37,14 @@
     
   <div class='container'>
     <p>Add a new post:</p>
-    <form class='form new-project-form mt-1' action='/api/recipes/' method='POST' enctype='multipart/form-data' >
+    <form class='form new-project-form mt-1' action='/api/posts/' method='POST' enctype='multipart/form-data' >
       <div class='form-group'>
         <label for='title'>Title:</label>
-        <input class='form-input form-control form-control' type='text' id='recipe-name' name='name'/>
+        <input class='form-input form-control form-control' type='text' id='title' name='title'/>
       </div>
       <div class='form-group'>
         <label for='content'>Content:</label>
-        <textarea class='form-input form-control' id='recipe-desc' name='description'></textarea>
+        <textarea class='form-input form-control' id='content' name='content'></textarea>
       </div>
       <div class='form-group'>
         <button type='submit' class='btn btn-success d-block mx-auto'>Add</button>

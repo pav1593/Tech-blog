@@ -27,7 +27,7 @@
   {{#if logged_in}}
     <form
       class='form m-3'
-      action='/api/posts/{{posts.id}}/comments/{{posts.user.id}}'
+      action='/api/posts/comments/{{posts.id}}'
       method='POST'
       enctype='multipart/form-data'
     >
