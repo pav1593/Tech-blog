@@ -42,7 +42,18 @@ const signUpHandler = async (event) => {
 
     //directing to the home page first
     if (response) {
-      document.location.replace('/');
+       
+              const loginresponse = await fetch('/api/users/login', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: { 'Content-Type': 'application/json' },
+              });
+              //if response ok, redirect the user to the homepage.
+              if (loginresponse.ok) {
+                document.location.replace('/');
+              } else {
+                alert(loginresponse.statusText);
+              }
     } else {
       alert(response);
     }
