@@ -23,16 +23,16 @@
       <h2>Signup</h2>
       <form class="signup-form mt-5">
         <div class="form-group">
-          <label for="exampleInputUsername">User Name</label>
-          <input type="text" class="form-control" id="signup-name" aria-describedby="emailHelp" />
+          <label for="signup-name">User Name</label>
+          <input type="text" class="form-control" id="signup-name" name="signup-name" aria-describedby="emailHelp" />
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" />
+          <label for="signup-email">Email address</label>
+          <input type="email" class="form-control" id="signup-email" name="signup-email" aria-describedby="emailHelp" />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="signup-password" />
+          <label for="signup-password">Password</label>
+          <input type="password" class="form-control" id="signup-password" name="signup-password" />
           <!-- error password message from express controller -->
           <small id="passwordHelp" class="form-text text-muted">Minimum 8 characters long</small>
         </div>
@@ -41,5 +41,5 @@
     </div>
 
     {{!-- link to the javascript file --}}
-    <script src="/js/login.js"></script>
+    <script src="./js/login.js"></script>
   </div>

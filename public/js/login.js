@@ -27,25 +27,24 @@ logInForm.addEventListener('submit', logInHandler);
 const singUpForm = document.querySelector('.signup-form');
 
 const signUpHandler = async (event) => {
+
   event.preventDefault();
-  const name = document.querySelector('#signup-name').value.trim();
+  const username = document.querySelector('#signup-name').value.trim();
   const email = document.querySelector('#signup-email').value.trim();
   const password = document.querySelector('#signup-password').value.trim();
-  console.log(
-    'dkjfkaj;sdklfjj;aklsdfjkdjflkjsdf;lkjsda;lkfjl;askdjfl;kjsd;fka;dsfkj'
-  );
 
-  if (name && email && password) {
+  if (username && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
+
     //directing to the home page first
-    if (response.ok) {
+    if (response) {
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert(response);
     }
   }
 };
