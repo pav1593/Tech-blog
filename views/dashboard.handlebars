@@ -12,7 +12,7 @@
                   <button id='edit-link' class='btn btn-link float-right' type="button" data-toggle="collapse" data-target="#collapseUpdate{{post.id}}" aria-expanded="false" aria-controls="collapseUpdate{{post.id}}">Edit</button>
 
                    <div class="container">
-                      <form class='collapse mt-3 pt-3 form' id="collapseUpdate{{post.id}}" action='/api/posts/updates/{{post.id}}' method='POST' enctype='multipart/form-data'>
+                      <form class='collapse mt-5 pt-1 form' id="collapseUpdate{{post.id}}" action='/api/posts/updates/{{post.id}}' method='POST' enctype='multipart/form-data'>
                         <div class='form-group'>
                           <label for='title'>Title:</label>
                           <input class='form-input form-control' type='text' id='title' name='title' value={{post.title}}>
